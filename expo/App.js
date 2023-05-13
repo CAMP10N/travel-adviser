@@ -15,7 +15,7 @@ export default function App() {
       <View
       style={{
         marginTop:10,
-        backgroundColor:"#CC6666",
+        backgroundColor:"#CC6665",
         borderBottomColor: '#000000',
         width:250,
         borderRadius:50,
