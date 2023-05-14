@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4ebdc8-e3b1-49d1-8e26-9c56e460405c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/infra/fastAPI/endpoints/weather.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/models/request/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/models/response/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/models/response/core_response.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../patterns/Design-Patterns" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PsdUISettings">
@@ -151,6 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682188410663</updated>
       <workItem from="1684393788038" duration="3204000" />
+      <workItem from="1684423561470" duration="240000" />
     </task>
     <servers />
   </component>
@@ -167,5 +171,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
