@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4ebdc8-e3b1-49d1-8e26-9c56e460405c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/core/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/models/request/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/models/response/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/models/response/core_response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="db4ebdc8-e3b1-49d1-8e26-9c56e460405c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +148,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682188410663</updated>
       <workItem from="1684393788038" duration="3204000" />
-      <workItem from="1684423561470" duration="240000" />
+      <workItem from="1684423561470" duration="337000" />
     </task>
     <servers />
   </component>
