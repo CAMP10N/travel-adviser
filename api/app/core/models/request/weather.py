@@ -25,4 +25,3 @@ class Coordinates:
 class Dates:
     start: datetime
     end: datetime
-

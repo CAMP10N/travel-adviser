@@ -18,5 +18,4 @@ def get_statistics(
     core: TravelAdviserCore = Depends(get_core),
 ) -> ForecastResponse:
     core_response = core.get_weather_forecast(request)
-    return ForecastResponse()
-
+    return core_response.response_content
