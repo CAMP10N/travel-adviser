@@ -18,3 +18,5 @@ starlette
 pydantic
 requests
 types-requests
+geopy
+python-dateutil

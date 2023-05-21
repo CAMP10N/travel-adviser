@@ -2,6 +2,7 @@ import json
 from typing import Protocol
 
 import requests
+from geopy.geocoders import Nominatim
 
 from app.core.models.request.weather import Coordinates
 
@@ -11,7 +12,7 @@ class ICoordinateProvider(Protocol):
         pass
 
 
-class DefaultCoordinateProvider:
+class HttpCoordinateProvider:
     request_url: str = "https://api.openweathermap.org/geo/1.0/direct"
     api_key: str = "6a03a52969e6134ed33eccf7d2bffac8"
 
@@ -37,3 +38,12 @@ class DefaultCoordinateProvider:
         # Request was not successful
         print("Request failed with status code:", response.status_code)
         return Coordinates(0, 0)
+
+
+class OfflineCoordinateProvider:
+    user_agent: str = "http"
+
+    def get_coordinates(self, city: str, country: str) -> Coordinates:
+        nom = Nominatim(user_agent=self.user_agent)
+        n = nom.geocode(f"{city}, {country}")
+        return Coordinates(longitude=n.longitude, latitude=n.latitude)

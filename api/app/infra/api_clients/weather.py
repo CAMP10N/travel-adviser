@@ -1,16 +1,17 @@
 import json
 from dataclasses import field
 from datetime import datetime, timedelta
-from typing import Callable, Dict, List, Protocol, Tuple
+from typing import Callable, Dict, List, Protocol
 
 import requests
 from dateutil.relativedelta import relativedelta
 
 from app.core.models.request.weather import Coordinates, Dates
 from app.core.models.response.weather import (
+    BadForecastResponse,
     ForecastResponse,
     ForecastType,
-    SingleWeatherResponse, BadForecastResponse,
+    SingleWeatherResponse,
 )
 
 
@@ -83,7 +84,7 @@ def default_aggregator(
 
 class DefaultWeatherProvider:
     prediction_url: str = "https://api.openweathermap.org/data/3.0/onecall"
-    historic_url: str = "https://api.openweathermap.org/data/3.0/onecall/timemachine"  # ?lat=41.76&lon=44.78&dt=1586433000&appid=6a03a52969e6134ed33eccf7d2bffac8&units=metric"
+    historic_url: str = "https://api.openweathermap.org/data/3.0/" "onecall/timemachine"
     api_key: str = "6a03a52969e6134ed33eccf7d2bffac8"
     aggregate_strategy: Callable[
         [List[SingleWeatherResponse], ForecastType], ForecastResponse
@@ -147,9 +148,9 @@ class DefaultWeatherProvider:
             "units": "metric",
         }
         curr_now = dates.start
-        curr = datetime(
-                curr_now.year - 10, curr_now.month, curr_now.day
-        ) + timedelta(hours=15)     # Weather at 3PM
+        curr = datetime(curr_now.year - 10, curr_now.month, curr_now.day) + timedelta(
+            hours=15
+        )  # Weather at 3PM
         aggregated_data: List[SingleWeatherResponse] = list()
         while curr_now <= dates.end:
             single_day_historic: List[SingleWeatherResponse] = list()
@@ -189,8 +190,8 @@ class DefaultWeatherProvider:
                         return BadForecastResponse
                 curr = curr + relativedelta(year=1)
             one_day_aggregated: ForecastResponse = self.aggregate_strategy(
-                                                        single_day_historic,
-                                                        ForecastType.Historic)
+                single_day_historic, ForecastType.Historic
+            )
             aggregated_data.append(
                 SingleWeatherResponse(
                     one_day_aggregated.daily_forecast[0].day,
@@ -199,7 +200,7 @@ class DefaultWeatherProvider:
                     one_day_aggregated.average_feels_like,
                     one_day_aggregated.average_humidity,
                     one_day_aggregated.mode_description,
-                    one_day_aggregated.average_wind_speed
+                    one_day_aggregated.average_wind_speed,
                 )
             )
             curr_now += timedelta(days=1)

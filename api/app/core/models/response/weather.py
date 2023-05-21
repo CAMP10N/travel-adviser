@@ -24,35 +24,22 @@ class SingleWeatherResponse:
 class ForecastResponse:
     daily_forecast: List[SingleWeatherResponse]
     type_of_forecast: ForecastType
-    average_temp: float | None
-    min_temp: float | None
-    max_temp: float | None
-    average_feels_like: float | None
-    min_feels_like: float | None
-    max_feels_like: float | None
-    average_humidity: float | None
-    min_humidity: float | None
-    max_humidity: float | None
-    average_wind_speed: float | None
-    min_wind_speed: float | None
-    max_wind_speed: float | None
-    mode_description: str | None
+    average_temp: float
+    min_temp: float
+    max_temp: float
+    average_feels_like: float
+    min_feels_like: float
+    max_feels_like: float
+    average_humidity: float
+    min_humidity: float
+    max_humidity: float
+    average_wind_speed: float
+    min_wind_speed: float
+    max_wind_speed: float
+    mode_description: str
 
 
 BadForecastResponse = ForecastResponse(
     [],
     ForecastType.Error,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-    None,
-)
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "")
